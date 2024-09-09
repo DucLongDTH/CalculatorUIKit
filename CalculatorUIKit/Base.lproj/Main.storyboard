@@ -334,7 +334,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xfb-Vp-kup">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xfb-Vp-kup">
                                 <rect key="frame" x="10" y="271.33333333333331" width="373" height="48"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="40"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -379,7 +379,7 @@
                                                     <action selector="didSelectPercent" destination="yao-Ob-Nnr" eventType="touchUpInside" id="93f-5q-Iyj"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Hj-4H-0US">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Hj-4H-0US" customClass="OperatorButton" customModule="CalculatorUIKit">
                                                 <rect key="frame" x="287.33333333333331" y="0.0" width="85.666666666666686" height="85.666666666666671"/>
                                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -388,7 +388,7 @@
                                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle1"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <action selector="didSelectOperation:" destination="yao-Ob-Nnr" eventType="touchUpInside" id="4Jn-p5-3gi"/>
+                                                    <action selector="didSelectOperation:" destination="yao-Ob-Nnr" eventType="touchUpInside" id="U4r-h1-ifO"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -396,7 +396,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZSE-zD-cIC">
                                         <rect key="frame" x="0.0" y="95.666666666666686" width="373" height="86"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HL7-Xt-ZPd">
+                                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HL7-Xt-ZPd">
                                                 <rect key="frame" x="0.0" y="0.0" width="85.666666666666671" height="86"/>
                                                 <color key="backgroundColor" systemColor="systemGrayColor"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
@@ -407,7 +407,7 @@
                                                     <action selector="didSelectNumber:" destination="yao-Ob-Nnr" eventType="touchUpInside" id="bvR-2y-lt0"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k44-CZ-Sdd">
+                                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k44-CZ-Sdd">
                                                 <rect key="frame" x="95.666666666666686" y="0.0" width="86" height="86"/>
                                                 <color key="backgroundColor" systemColor="systemGrayColor"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
@@ -418,7 +418,7 @@
                                                     <action selector="didSelectNumber:" destination="yao-Ob-Nnr" eventType="touchUpInside" id="vgP-EX-pOk"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ekq-b9-t2t">
+                                            <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ekq-b9-t2t">
                                                 <rect key="frame" x="191.66666666666666" y="0.0" width="85.666666666666657" height="86"/>
                                                 <color key="backgroundColor" systemColor="systemGrayColor"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
@@ -429,15 +429,15 @@
                                                     <action selector="didSelectNumber:" destination="yao-Ob-Nnr" eventType="touchUpInside" id="wLO-zN-NEV"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vUw-mD-oUk">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vUw-mD-oUk" customClass="OperatorButton" customModule="CalculatorUIKit">
                                                 <rect key="frame" x="287.33333333333331" y="0.0" width="85.666666666666686" height="86"/>
                                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="x"/>
+                                                <state key="normal" title="X"/>
                                                 <connections>
-                                                    <action selector="didSelectOperation:" destination="yao-Ob-Nnr" eventType="touchUpInside" id="hqg-Nq-zUA"/>
+                                                    <action selector="didSelectOperation:" destination="yao-Ob-Nnr" eventType="touchUpInside" id="TwD-uR-aFy"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -445,7 +445,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="viP-6k-oDM">
                                         <rect key="frame" x="0.0" y="191.66666666666669" width="373" height="85.666666666666686"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TCt-If-GBh">
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TCt-If-GBh">
                                                 <rect key="frame" x="0.0" y="0.0" width="85.666666666666671" height="85.666666666666671"/>
                                                 <color key="backgroundColor" systemColor="systemGrayColor"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -457,7 +457,7 @@
                                                     <action selector="didSelectNumber:" destination="yao-Ob-Nnr" eventType="touchUpInside" id="Htv-mA-XNd"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PSj-A3-Uhm">
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PSj-A3-Uhm">
                                                 <rect key="frame" x="95.666666666666686" y="0.0" width="86" height="85.666666666666671"/>
                                                 <color key="backgroundColor" systemColor="systemGrayColor"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -469,7 +469,7 @@
                                                     <action selector="didSelectNumber:" destination="yao-Ob-Nnr" eventType="touchUpInside" id="9sc-7l-1Ls"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vwY-Ga-cjp">
+                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vwY-Ga-cjp">
                                                 <rect key="frame" x="191.66666666666666" y="0.0" width="85.666666666666657" height="85.666666666666671"/>
                                                 <color key="backgroundColor" systemColor="systemGrayColor"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -481,7 +481,7 @@
                                                     <action selector="didSelectNumber:" destination="yao-Ob-Nnr" eventType="touchUpInside" id="vGI-dK-Ofd"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3AD-Me-wUA">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3AD-Me-wUA" customClass="OperatorButton" customModule="CalculatorUIKit">
                                                 <rect key="frame" x="287.33333333333331" y="0.0" width="85.666666666666686" height="85.666666666666671"/>
                                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -490,7 +490,7 @@
                                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle1"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <action selector="didSelectOperation:" destination="yao-Ob-Nnr" eventType="touchUpInside" id="5Kc-RN-1Ls"/>
+                                                    <action selector="didSelectOperation:" destination="yao-Ob-Nnr" eventType="touchUpInside" id="avn-Q2-6CO"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -498,7 +498,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="1Nf-zt-d4m">
                                         <rect key="frame" x="0.0" y="287.33333333333331" width="373" height="85.666666666666686"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Nf-nc-ihq">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Nf-nc-ihq">
                                                 <rect key="frame" x="0.0" y="0.0" width="85.666666666666671" height="85.666666666666671"/>
                                                 <color key="backgroundColor" systemColor="systemGrayColor"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -510,7 +510,7 @@
                                                     <action selector="didSelectNumber:" destination="yao-Ob-Nnr" eventType="touchUpInside" id="8C5-xa-hug"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="10u-A1-heZ">
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="10u-A1-heZ">
                                                 <rect key="frame" x="95.666666666666686" y="0.0" width="86" height="85.666666666666671"/>
                                                 <color key="backgroundColor" systemColor="systemGrayColor"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -522,7 +522,7 @@
                                                     <action selector="didSelectNumber:" destination="yao-Ob-Nnr" eventType="touchUpInside" id="XgR-3O-V7U"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t8A-bf-3jd">
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t8A-bf-3jd">
                                                 <rect key="frame" x="191.66666666666666" y="0.0" width="85.666666666666657" height="85.666666666666671"/>
                                                 <color key="backgroundColor" systemColor="systemGrayColor"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -534,7 +534,7 @@
                                                     <action selector="didSelectNumber:" destination="yao-Ob-Nnr" eventType="touchUpInside" id="N5s-U4-qwS"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PrK-8q-u6H">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PrK-8q-u6H" customClass="OperatorButton" customModule="CalculatorUIKit">
                                                 <rect key="frame" x="287.33333333333331" y="0.0" width="85.666666666666686" height="85.666666666666671"/>
                                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -543,7 +543,7 @@
                                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle1"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <action selector="didSelectOperation:" destination="yao-Ob-Nnr" eventType="touchUpInside" id="dpY-yF-PW7"/>
+                                                    <action selector="didSelectOperation:" destination="yao-Ob-Nnr" eventType="touchUpInside" id="URX-tc-7iy"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -611,10 +611,11 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="devideButton" destination="7Hj-4H-0US" id="I2J-2x-VBc"/>
-                        <outlet property="minusButton" destination="vUw-mD-oUk" id="I4Z-Hh-3i5"/>
-                        <outlet property="multiplyButton" destination="3AD-Me-wUA" id="ZOP-zi-k6a"/>
-                        <outlet property="plusButton" destination="PrK-8q-u6H" id="tvI-7y-ccA"/>
+                        <outlet property="devideButton" destination="7Hj-4H-0US" id="0Aw-jF-3p3"/>
+                        <outlet property="displayLable" destination="xfb-Vp-kup" id="PM8-A7-34d"/>
+                        <outlet property="minusButton" destination="3AD-Me-wUA" id="7MD-ev-aQZ"/>
+                        <outlet property="multiplyButton" destination="vUw-mD-oUk" id="gXY-Fb-Y2X"/>
+                        <outlet property="plusButton" destination="PrK-8q-u6H" id="sRN-5g-KnX"/>
                         <outletCollection property="roundButtons" destination="5uW-HV-lmk" collectionClass="NSMutableArray" id="T4X-hB-v9f"/>
                         <outletCollection property="roundButtons" destination="cjA-Eh-fwR" collectionClass="NSMutableArray" id="Qh0-Gm-oZh"/>
                         <outletCollection property="roundButtons" destination="Ms7-TZ-y8R" collectionClass="NSMutableArray" id="gFx-Tt-xjb"/>

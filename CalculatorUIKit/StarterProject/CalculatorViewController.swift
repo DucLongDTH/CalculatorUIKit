@@ -12,13 +12,19 @@ class CalculatorViewController: UIViewController {
     
     @IBOutlet var roundButtons: [UIButton]!
     
+    @IBOutlet weak var displayLable: UILabel!
     
-    @IBOutlet weak var devideButton: UIButton!
-    @IBOutlet weak var minusButton: UIButton!
-    @IBOutlet weak var multiplyButton: UIButton!
-    @IBOutlet weak var plusButton: UIButton!
+    @IBOutlet weak var devideButton: OperatorButton!
+    @IBOutlet weak var minusButton: OperatorButton!
+    @IBOutlet weak var multiplyButton: OperatorButton!
+    @IBOutlet weak var plusButton: OperatorButton!
     
-    lazy var operationButtons: [UIButton] = [devideButton, minusButton, multiplyButton, plusButton]
+    lazy var operationButtons: [OperatorButton] = [devideButton, minusButton, multiplyButton, plusButton]
+    
+    enum Operation {
+        case add, subtract, multiply, divide, none
+    }
+    private var operation: Operation = .none
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,8 +41,38 @@ class CalculatorViewController: UIViewController {
         }
     }
     
-    @IBAction func didSelectOperation(_ sender: UIButton) {
-        print("didSelectOperation")
+    @IBAction func didSelectOperation(_ sender: OperatorButton) {
+        print("\(sender.titleLabel?.text ?? "nil")")
+        switch sender.titleLabel?.text {
+        case "+":
+            operation = .add
+        case "-":
+            operation = .subtract
+        case "X":
+            operation = .multiply
+        case "÷":
+            operation = .divide
+        default:
+            return
+        }
+        highlightButton(sender)
+    }
+    
+    func highlightButton(_ button: OperatorButton) {
+        deSelectButton()
+        button.setTitleColor(.orange, for: .normal)
+        button.tintColor = .orange
+        button.backgroundColor = .white
+        button.isSelection = true
+    }
+    
+    func deSelectButton(){
+        for button in operationButtons {
+            button.backgroundColor = .systemOrange
+            button.setTitleColor(.white, for: .normal)
+            button.tintColor = .white
+            button.isSelection = false
+        }
     }
     
     
@@ -46,7 +82,13 @@ class CalculatorViewController: UIViewController {
     
     
     @IBAction func didSelectNumber(_ sender: UIButton) {
-        print("didSelectNumber")
+        let number = sender.tag
+        print(number)
+        if displayLable.text == "0" {
+            displayLable.text = "\(number)"
+        } else {
+            displayLable.text! += "\(number)"
+        }
     }
     
     @IBAction func didSelectDecimal() {

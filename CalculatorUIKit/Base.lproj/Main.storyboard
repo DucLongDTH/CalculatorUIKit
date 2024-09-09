@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yao-Ob-Nnr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yao-Ob-Nnr">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -379,14 +379,13 @@
                                                     <action selector="didSelectPercent" destination="yao-Ob-Nnr" eventType="touchUpInside" id="93f-5q-Iyj"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Hj-4H-0US" customClass="OperatorButton" customModule="CalculatorUIKit">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Hj-4H-0US" customClass="OperatorButton" customModule="CalculatorUIKit">
                                                 <rect key="frame" x="287.33333333333331" y="0.0" width="85.666666666666686" height="85.666666666666671"/>
                                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="÷">
-                                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle1"/>
-                                                </buttonConfiguration>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="÷"/>
                                                 <connections>
                                                     <action selector="didSelectOperation:" destination="yao-Ob-Nnr" eventType="touchUpInside" id="U4r-h1-ifO"/>
                                                 </connections>
@@ -429,7 +428,7 @@
                                                     <action selector="didSelectNumber:" destination="yao-Ob-Nnr" eventType="touchUpInside" id="wLO-zN-NEV"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vUw-mD-oUk" customClass="OperatorButton" customModule="CalculatorUIKit">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vUw-mD-oUk" customClass="OperatorButton" customModule="CalculatorUIKit">
                                                 <rect key="frame" x="287.33333333333331" y="0.0" width="85.666666666666686" height="86"/>
                                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
@@ -481,14 +480,13 @@
                                                     <action selector="didSelectNumber:" destination="yao-Ob-Nnr" eventType="touchUpInside" id="vGI-dK-Ofd"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3AD-Me-wUA" customClass="OperatorButton" customModule="CalculatorUIKit">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3AD-Me-wUA" customClass="OperatorButton" customModule="CalculatorUIKit">
                                                 <rect key="frame" x="287.33333333333331" y="0.0" width="85.666666666666686" height="85.666666666666671"/>
                                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="-">
-                                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle1"/>
-                                                </buttonConfiguration>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="-"/>
                                                 <connections>
                                                     <action selector="didSelectOperation:" destination="yao-Ob-Nnr" eventType="touchUpInside" id="avn-Q2-6CO"/>
                                                 </connections>
@@ -534,14 +532,13 @@
                                                     <action selector="didSelectNumber:" destination="yao-Ob-Nnr" eventType="touchUpInside" id="N5s-U4-qwS"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PrK-8q-u6H" customClass="OperatorButton" customModule="CalculatorUIKit">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PrK-8q-u6H" customClass="OperatorButton" customModule="CalculatorUIKit">
                                                 <rect key="frame" x="287.33333333333331" y="0.0" width="85.666666666666686" height="85.666666666666671"/>
                                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="+">
-                                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle1"/>
-                                                </buttonConfiguration>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="+"/>
                                                 <connections>
                                                     <action selector="didSelectOperation:" destination="yao-Ob-Nnr" eventType="touchUpInside" id="URX-tc-7iy"/>
                                                 </connections>
@@ -612,7 +609,7 @@
                     </view>
                     <connections>
                         <outlet property="devideButton" destination="7Hj-4H-0US" id="0Aw-jF-3p3"/>
-                        <outlet property="displayLable" destination="xfb-Vp-kup" id="PM8-A7-34d"/>
+                        <outlet property="displayLabel" destination="xfb-Vp-kup" id="PM8-A7-34d"/>
                         <outlet property="minusButton" destination="3AD-Me-wUA" id="7MD-ev-aQZ"/>
                         <outlet property="multiplyButton" destination="vUw-mD-oUk" id="gXY-Fb-Y2X"/>
                         <outlet property="plusButton" destination="PrK-8q-u6H" id="sRN-5g-KnX"/>
@@ -643,13 +640,13 @@
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray2Color">
-            <color red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGrayColor">
-            <color red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

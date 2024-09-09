@@ -2,17 +2,17 @@
 //  CalculatorViewController.swift
 //  CalculatorUIKit
 //
-//  Created by R K on 11/29/23.
+//  Created by DUCLONGDEV on 09/09/24.
 //
 
 import UIKit
 
 class CalculatorViewController: UIViewController {
-
+    
     
     @IBOutlet var roundButtons: [UIButton]!
     
-    @IBOutlet weak var displayLable: UILabel!
+    @IBOutlet weak var displayLabel: UILabel!
     
     @IBOutlet weak var devideButton: OperatorButton!
     @IBOutlet weak var minusButton: OperatorButton!
@@ -20,11 +20,28 @@ class CalculatorViewController: UIViewController {
     @IBOutlet weak var plusButton: OperatorButton!
     
     lazy var operationButtons: [OperatorButton] = [devideButton, minusButton, multiplyButton, plusButton]
-    
     enum Operation {
         case add, subtract, multiply, divide, none
     }
     private var operation: Operation = .none
+    var operationSelected: Bool {
+        //      return operation != .none
+        for button in operationButtons {
+            if button.isSelection {
+                return true
+            }
+        }
+        return false
+    }
+    
+    var previousNumber: Double?
+    var equalButtonTapped = false
+    
+    var displayNumber: Double {
+        let text = displayLabel.text!
+        let number = Double(text)
+        return number!
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +59,12 @@ class CalculatorViewController: UIViewController {
     }
     
     @IBAction func didSelectOperation(_ sender: OperatorButton) {
-        print("\(sender.titleLabel?.text ?? "nil")")
+        if let _ = previousNumber, !equalButtonTapped, !operationSelected {
+            performOperation()
+            self.previousNumber = nil
+        }
+        
+        
         switch sender.titleLabel?.text {
         case "+":
             operation = .add
@@ -56,12 +78,14 @@ class CalculatorViewController: UIViewController {
             return
         }
         highlightButton(sender)
+        equalButtonTapped = false
+        previousNumber = displayNumber
     }
     
     func highlightButton(_ button: OperatorButton) {
         deSelectButton()
         button.setTitleColor(.orange, for: .normal)
-        button.tintColor = .orange
+        //        button.tintColor = .orange
         button.backgroundColor = .white
         button.isSelection = true
     }
@@ -70,42 +94,93 @@ class CalculatorViewController: UIViewController {
         for button in operationButtons {
             button.backgroundColor = .systemOrange
             button.setTitleColor(.white, for: .normal)
-            button.tintColor = .white
+            //            button.tintColor = .white
             button.isSelection = false
         }
     }
     
     
     @IBAction func didSelectEqual() {
-        print("didSelectEqual")
+        guard operation != .none else { return }
+        performOperation()
+        equalButtonTapped = true
     }
     
+    func performOperation(){
+        guard let previousNumber else { return }
+        
+        var result: Double = 0
+        switch operation {
+        case .add:
+            result = previousNumber + displayNumber
+        case .subtract:
+            result = previousNumber - displayNumber
+        case .multiply:
+            result = previousNumber * displayNumber
+        case .divide:
+            result = previousNumber / displayNumber
+        case .none:
+            return
+        }
+        if result.truncatingRemainder(dividingBy: 1) == 0 {
+            let int = Int(result)
+            displayLabel.text = "\(int)"
+            
+        } else {
+            displayLabel.text = "\(result)"
+        }
+        
+        self.previousNumber = result
+    }
     
     @IBAction func didSelectNumber(_ sender: UIButton) {
         let number = sender.tag
         print(number)
-        if displayLable.text == "0" {
-            displayLable.text = "\(number)"
+        
+        if operationSelected {
+            deSelectButton()
+            displayLabel.text = "\(number)"
         } else {
-            displayLable.text! += "\(number)"
+            if displayNumber == 0 {
+                displayLabel.text = "\(number)"
+            } else {
+                displayLabel.text! += "\(number)"
+            }
         }
+        
     }
     
     @IBAction func didSelectDecimal() {
-        print("didSelectDecimal")
+        let text = displayLabel.text!
+        if text.last == "." {
+            displayLabel.text!.removeLast()
+        } else if !text.contains(".") {
+            displayLabel.text! += "."
+        }
     }
     
     @IBAction func didSelectPercent() {
-        print("didSelectPercent")
+        guard var number = Double(displayLabel.text!) else {
+            return
+        }
+        number /= 100
+        
+        displayLabel.text = "\(number)"
     }
     
     @IBAction func didSelectPlusMinus() {
-        print("didSelectPlusMinus")
+        guard var number = Double(displayLabel.text!) else {
+            return
+        }
+        number *= -1
+        
+        displayLabel.text = "\(number)"
     }
     
     @IBAction func didSelectAC() {
-        print("didSelectAC")
+        previousNumber = nil
+        displayLabel.text = "0"
+        operation = .none
+        deSelectButton()
     }
-    
-    
 }
